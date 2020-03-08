@@ -17,7 +17,7 @@ module.exports.hello = (event, context, callback) => {
                 headers: {
                   'Access-Control-Allow-Origin': '*', // Required for CORS support to work
                 },
-                body: JSON.stringify("v2Successfully saved object to " + bucketName + "/" + keyName),
+                body: JSON.stringify("Successfully saved object to " + bucketName + "/" + keyName),
               };
         
           return s3.putObject(params, function (err, data) {
