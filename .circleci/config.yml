@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/hello-world-ci
-
+    working_directory: ~/serverlesshelloworld
     docker:
       # specify the version you desire here
       - image: circleci/node:10.1.0
