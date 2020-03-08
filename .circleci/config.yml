@@ -17,4 +17,4 @@ jobs:
       # deploy app            
       - run:
           name: Deploy application 
-          command: sls deploy -v
+          command: sudo sls deploy -v
