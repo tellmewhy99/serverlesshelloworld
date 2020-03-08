@@ -17,4 +17,4 @@ jobs:
       # deploy app            
       - run:
           name: Deploy application 
-          command: sudo sls deploy -v
+          command: serverless deploy -v
