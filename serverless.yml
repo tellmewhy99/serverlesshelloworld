@@ -59,7 +59,7 @@ functions:
     events:
       - http:
           path: hello
-          method: post
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
