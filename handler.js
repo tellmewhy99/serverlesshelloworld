@@ -11,13 +11,23 @@ module.exports.hello = (event, context, callback) => {
                 + currentdate.getSeconds() + "!";
             
             var params = { Bucket: bucketName, Key: keyName, Body: content };
+
+            const response = {
+                statusCode: 200,
+                headers: {
+                  'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+                },
+                body: JSON.stringify("Successfully saved object to " + bucketName + "/" + keyName),
+              };
         
           return s3.putObject(params, function (err, data) {
             }).promise().then(res => {
-                callback(null, "Successfully saved object to " + bucketName + "/" + keyName);
+                callback(null, response);
               }).catch(err => {
                 callback(err, null);
-              });;
+              });
+
+            
 
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
